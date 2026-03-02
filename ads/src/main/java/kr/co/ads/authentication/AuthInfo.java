@@ -7,7 +7,6 @@ public class AuthInfo {
 
 	public AuthInfo(String id, String phoneNumber, int no) {
 		this.id = id;
-		this.phoneNumber = phoneNumber;
 		this.no = no;
 	}
 
@@ -17,14 +16,6 @@ public class AuthInfo {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
 	}
 
 	public int getNo() {
@@ -37,6 +28,6 @@ public class AuthInfo {
 
 	@Override
 	public String toString() {
-		return "AuthInfo [id=" + id + ", phoneNumber=" + phoneNumber + ", no=" + no + "]";
+		return "RentalInfo [id=" + id + ", no=" + no + "]";
 	}
 }
