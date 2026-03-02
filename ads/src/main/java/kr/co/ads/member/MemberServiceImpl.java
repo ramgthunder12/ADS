@@ -2,6 +2,7 @@ package kr.co.ads.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -9,6 +10,7 @@ public class MemberServiceImpl implements MemberService {
 	MemberRepositoryImpl memberRepositoryImpl;
 
 	// 본인 인증
+	@Transactional(readOnly = true)
 	@Override
 	public boolean selfCertification(Member member) throws Exception {
 
@@ -16,6 +18,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	// 카드 정보 갱신
+	@Transactional
 	@Override
 	public boolean updateCardInfo(Member member) throws Exception {
 		String cardUid = memberRepositoryImpl.receiveNfc();
